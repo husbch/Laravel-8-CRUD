@@ -25,7 +25,7 @@ spec:
       - name: registry
       containers:
       - name: laravel
-        image: husnibakri/laravel-app:<VERSION>
+        image: husnibakri/laravel-app:latest
         ports:
           - name: http-port
             containerPort: 8080
@@ -62,16 +62,16 @@ spec:
   selector:
     app: laravel
 ---
-apiVersion: autoscaling/v2beta2
+apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: hpa-svc-print
-  namespace: svc-print
+  name: hpa-svc-laravel
+  namespace: default
 spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: svc-print
+    name: svc-laravel
   minReplicas: 1
   maxReplicas: 10
   metrics:

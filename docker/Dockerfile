@@ -21,6 +21,7 @@ RUN mkdir -p /run/php
 RUN cp nginx/apps.conf /etc/nginx/sites-enabled/default
 RUN composer update && composer dump-autoload
 RUN composer install --no-dev --optimize-autoloader
+RUN composer require fideloper/proxy
 RUN php artisan optimize:clear
 RUN php artisan view:clear
 RUN php artisan key:generate
