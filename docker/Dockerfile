@@ -27,4 +27,5 @@ RUN php artisan view:clear
 RUN php artisan key:generate
 RUN chmod -R 777 storage bootstrap/cache
 
-CMD php-fpm7.4 -D && nginx -g "daemon off;"
+#CMD php-fpm7.4 -D && nginx -g "daemon off;"
+CMD php artisan serve

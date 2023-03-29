@@ -25,7 +25,7 @@ spec:
       - name: registry
       containers:
       - name: laravel
-        image: husnibakri/laravel-app:latest
+        image: husnibakri/laravel-app:4ca05efc12ff9b4ccb276ac083a1ad934d6e548a
         ports:
           - name: http-port
             containerPort: 8080
