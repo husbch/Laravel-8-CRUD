@@ -10,6 +10,15 @@ pipeline {
         ttyEnabled true
         privileged true
       }
+      label 'kubectl'
+      containerTemplate {
+        name 'kubectl'
+        image 'bitnami/kubectl:latest'
+        command 'sleep'
+        args 'infinity'
+        ttyEnabled true
+        privileged true
+      }
     }
   }
   stages {
